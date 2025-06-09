@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Prana Zen - Terapias, masajes, reiki, aparatología, podología y bienestar para mujeres en Comodoro Rivadavia. Reservá tu turno en Prana Zen.">
+  <meta name="keywords" content="bienestar, masajes, reiki, aparatología, podología, estética, mujeres, Comodoro Rivadavia, Prana Zen">
+  <meta name="author" content="Romina Santos">
+  
+  <title>Prana Zen | Bienestar y cuidado integral</title>
+  
+  <link rel="icon" type="image/png" href="favicon.png">
+  
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #b5e7b2;
+      padding: 2rem 1rem;
+      text-align: center;
+    }
+
+    header img {
+      max-width: 250px;
+      height: auto;
+      display: block;
+      margin: 0 auto 1rem;
+      border: 6px solid #C9A64E; /* borde dorado y grueso */
+      border-radius: 50%; /* bordes curvos (círculo) */
+      padding: 5px;
+      background-color: white; /* opcional, para que se note más */
+    }
+
+    header p {
+      font-style: italic;
+    }
+
+    section {
+      padding: 2rem 1rem;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+
+    .servicios {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.5rem;
+      max-width: 1100px;
+      margin: 0 auto; /* Centra el grid horizontalmente */
+      padding: 1rem;
+      justify-items: center; /* Centra el contenido dentro de cada celda */
+    }
+
+    .servicio {
+      background: #b5e7b2;
+      border-radius: 1rem;
+      padding: 1.5rem;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      text-align: center;
+      width: 100%;
+      max-width: 300px; /* Controla el ancho de cada tarjeta */
+      transition: transform 0.3s ease;
+    }
+
+    .servicio:hover {
+      transform: scale(1.03);
+    }
+
+    .servicio img {
+      width: 100%;
+      border-radius: 10px;
+      margin-bottom: 1rem;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+
+    .servicio img:hover {
+      transform: scale(1.05);
+    }
+
+    .cta {
+      text-align: center;
+      margin: 2rem 0;
+    }
+
+    .boton-wsp {
+      background-color: #C9A64E;
+      color: white;
+      padding: 15px 25px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-size: 1.1rem;
+    }
+
+    footer {
+      background-color: #b5e7b2;
+      padding: 1rem;
+      text-align: center;
+      font-size: 0.9rem;
+    }
+
+    .redes {
+      margin-top: 1rem;
+    }
+
+    .redes a {
+      margin: 0 10px;
+      text-decoration: none;
+      font-weight: bold;
+      color: #a65c5c;
+    }
+
+    /* Botón flotante de WhatsApp */
+    .whatsapp-fijo {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #25d366;
+  color: white;
+  padding: 12px;
+  border-radius: 50%;
+  text-decoration: none;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 55px;
+  height: 55px;
+  transition: background-color 0.3s ease;
+}
+
+.whatsapp-fijo:hover {
+  background-color: #1ebe5d;
+}
+
+@media (max-width: 600px) {
+  .whatsapp-fijo {
+    width: 50px;
+    height: 50px;
+    bottom: 15px;
+    right: 15px;
+  }
+}
+
+
+    .servicio h3 a {
+      color: #3a2c2c;
+      text-decoration: none;
+    }
+
+    .servicio h3 a:hover {
+      color: #d68484;
+      text-decoration: underline;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #cfe9c6;
+      color: #3a2c2c;
+    }
+
+    .galeria {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1rem;
+      max-width: 1000px;
+      margin: auto;
+      padding: 1rem;
+    }
+
+    .galeria img {
+      width: 100%;
+      border-radius: 10px;
+      transition: transform 0.4s ease;
+      transform: scale(0.7);
+      cursor: pointer;
+    }
+
+    .galeria img:hover {
+      transform: scale(1.1);
+    }
+
+    .galeria-seccion {
+  margin-bottom: 2rem;
+}
+
+.galeria-seccion h3 {
+  text-align: center;
+  margin-bottom: 1rem;
+  color: #3a2c2c;
+}
+
+.filtro-btn {
+  background-color: #C9A64E;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 8px;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  margin: 0 5px 10px 5px;
+  transition: background-color 0.3s ease;
+}
+
+.filtro-btn:hover {
+  background-color: #a68238;
+}
+
+.filtro-btn:focus {
+  outline: 2px solid #a68238;
+  outline-offset: 2px;
+}
+
+
+  </style>
+</head>
+<body>
+
+  <header>
+    <img src="prana zen.jpg" alt="Logo Prana Zen" />
+    <p>Conectá con tu belleza, armonizá tu energía.</p>
+  </header>
+
+  <section>
+    <h2 style="text-align: center; margin-bottom: 2rem;">Servicios</h2>
+    <p style="max-width: 400px; margin: 0 auto 1.5rem auto; padding: 0.8rem; background-color: #f0f8e9; border: 2px solid #C9A64E; border-radius: 10px; text-align: center; color: #6a8e25; font-weight: bold;">
+      🚗 Servicio a domicilio disponible — Consultanos sin compromiso
+    </p>
+    <div class="servicios" id="servicios">
+      <div class="servicio" id="aparatologia">
+        <img src="aparatos.png" alt="Aparatología estética" style="width: 100%; border-radius: 10px; margin-bottom: 1rem;">
+        <h3><a href="#detalle-aparatos">Aparatología</a></h3>
+        <p>Potenciamos tu bienestar con tecnología estética de vanguardia.</p>
+      </div>
+      <div class="servicio" id="masajes">
+        <img src="masajes.png" alt="Masajes relajantes" style="width: 100%; border-radius: 10px; margin-bottom: 1rem;">
+        <h3><a href="#detalle-masajes">Masajes</a></h3>
+        <p>Relajantes y descontracturantes. Liberá tensiones y renová tu energía.</p>
+      </div>
+      <div class="servicio" id="podología">
+        <img src="pedicura.png" alt="Podología profesional" style="width: 100%; border-radius: 10px; margin-bottom: 1rem;">
+        <h3><a href="#detalle-podología">Podología</a></h3>
+        <p>Cuidado de pies con mimo, estilo y salud.</p>
+      </div>
+      <div class="servicio" id="reiki">
+        <img src="reiki.png" alt="Sesión de reiki" style="width: 100%; border-radius: 10px; margin-bottom: 1rem;">
+        <h3><a href="#detalle-reiki">Reiki</a></h3>
+        <p>Armonizá tu energía interior con sesiones de sanación emocional y física.</p>
+      </div>
+      <div class="servicio" id="depilacion">
+        <img src="depilacion.png" alt="Depilación profesional" style="width: 100%; border-radius: 10px; margin-bottom: 1rem;">
+        <h3><a href="#detalle-depilacion">Depilación</a></h3>
+        <p>Con cera profesional. Resultados duraderos y máxima higiene.</p>
+      </div>
+      <div class="servicio" id="manicuria/pedicuria">
+        <img src="manicuria.png" alt="Belleza pies y manos" style="width: 100%; border-radius: 10px; margin-bottom: 1rem;">
+        <h3><a href="#detalle-manicuria/pedicuria">Belleza pies y manos</a></h3>
+        <p>Máximo cuidado y dedicación.</p>
+      </div>
+    </div>
+  </section>
+  
+
+  <section>
+    <h2>Conoceme</h2>
+    <div style="display: flex; flex-wrap: wrap; gap: 2rem; align-items: center; justify-content: center;">
+      <img src="mi-foto.jpg" alt="Foto de la profesional" style="max-width: 250px; border-radius: 20px;">
+      <div style="max-width: 500px;">
+        <p>¡Hola! Soy Romina, fundadora de Prana Zen. Hace más de 5 años acompaño a mujeres a reconectar con su bienestar a través de masajes, terapias energéticas y cuidado personal.</p>
+        <p>Mi propósito es crear un espacio cálido donde puedas relajarte, sentirte cuidada y volver a vos misma 🌸</p>
+      </div>
+    </div>
+  </section>
+  
+  <section>
+    <h2 style="text-align: center; margin-bottom: 1rem;">Galería de fotos</h2>
+    <div style="text-align: center; margin-bottom: 2rem;">
+      <button class="filtro-btn" data-seccion="ninguna">Ninguna</button>
+      <button class="filtro-btn" data-seccion="podologia">Podología</button>
+      <button class="filtro-btn" data-seccion="masajes">Masajes</button>
+      <button class="filtro-btn" data-seccion="reiki">Reiki</button>
+      <button class="filtro-btn" data-seccion="todas">Todas</button>
+    </div>
+  
+    <!-- Secciones galería -->
+    <div class="galeria-seccion" data-seccion="podologia">
+      <h3>Podología</h3>
+      <div class="galeria">
+      <img src="podologia2.png" alt="podologia">
+      <img src="podologia3.png" alt="podologia">
+      <img src="podologia.png" alt="podologia">
+      <img src="podologia4.png" alt="podologia">
+      <img src="podologia5.png" alt="podologia">
+      <img src="podologia6.png" alt="podologia">
+      <img src="podologia7.png" alt="podologia">
+      <img src="podologia8.png" alt="podologia">
+      <img src="podologia9.png" alt="podologia">
+    </div>
+    </div>
+  </section>
+
+  <script>
+    const botones = document.querySelectorAll('.filtro-btn');
+    const secciones = document.querySelectorAll('.galeria-seccion');
+  
+    botones.forEach(boton => {
+      boton.addEventListener('click', () => {
+        const seleccion = boton.getAttribute('data-seccion');
+        
+        if(seleccion === 'todas'){
+          secciones.forEach(sec => sec.style.display = 'block');
+        } else if(seleccion === 'ninguna'){
+          secciones.forEach(sec => sec.style.display = 'none');
+        } else {
+          secciones.forEach(sec => {
+            sec.style.display = (sec.getAttribute('data-seccion') === seleccion) ? 'block' : 'none';
+          });
+        }
+      });
+    });
+  </script>
+  
+  
+  <section>
+    <h2>Reservá tu turno</h2>
+    <div class="cta">
+      <a class="boton-wsp" href="https://wa.me/5492975094235?text=Hola%20SpacioMujer%2C%20quiero%20pedir%20un%20turno%20para..." target="_blank">
+        📅 Reservá tu turno por WhatsApp
+      </a>
+    </div>
+  </section>
+
+  <section>
+    <h2>Escribime</h2>
+    <form 
+      action="mailto:santosf.romi@hotmail.com.ar?subject=Consulta%20desde%20la%20web%20PranaZen" 
+      method="post" 
+      enctype="text/plain" 
+      style="max-width: 500px; margin: auto;"
+    >
+      <label for="nombre">Nombre:</label><br>
+      <input 
+        type="text" 
+        id="nombre" 
+        name="nombre" 
+        required 
+        style="width: 100%; padding: 8px;"
+        placeholder="Tu nombre"
+      ><br><br>
+  
+      <label for="mensaje">Mensaje:</label><br>
+      <textarea 
+        id="mensaje" 
+        name="mensaje" 
+        rows="5" 
+        required 
+        style="width: 100%; padding: 8px;"
+        placeholder="Escribí tu mensaje aquí"
+      ></textarea><br><br>
+  
+      <button 
+        type="submit" 
+        style="background: #C9A64E; color: white; padding: 10px 20px; border: none; border-radius: 8px;"
+      >
+        Enviar
+      </button>
+    </form>
+  </section>
+  
+
+
+  <section id="detalle-aparatos">
+    <h2>Aparatos</h2>
+    <p>Utilizacion de los mas modernos aparatos como ondas rusas, ultracavitacion, radio frecuencia entre otros⚡.</p>
+    <a href="#servicios" style="display:inline-block; margin-top: 1rem; color: #a65c5c; text-decoration: underline;">⬅ Volver a Servicios</a>
+</section>
+
+  <section id="detalle-masajes">
+    <h2>Masajes</h2>
+    <p>Ofrezco masajes relajantes y descontracturantes adaptados a tus necesidades. Utilizo aceites esenciales y técnicas personalizadas para aliviar el estrés y revitalizar tu cuerpo💆‍♀️.</p>
+    <a href="#servicios" style="display:inline-block; margin-top: 1rem; color: #a65c5c; text-decoration: underline;">⬅ Volver a Servicios</a>
+</section>
+  
+  <section id="detalle-podología">
+    <h2>Podología</h2>
+    <p>La podología profesional incluye limpieza, corte, limado y esmaltado si lo deseas. Trabajo con altos estándares de higiene para que te sientas cuidada y cómoda🦶.</p>
+    <a href="#servicios" style="display:inline-block; margin-top: 1rem; color: #a65c5c; text-decoration: underline;">⬅ Volver a Servicios</a>  
+</section>
+  
+  <section id="detalle-reiki">
+    <h2>Reiki</h2>
+    <p>Sesiones de reiki para armonizar tu energía vital, reducir el estrés y fomentar el equilibrio emocional y físico. Una experiencia de conexión profunda con vos misma✨.</p>
+    <a href="#servicios" style="display:inline-block; margin-top: 1rem; color: #a65c5c; text-decoration: underline;">⬅ Volver a Servicios</a>  
+</section>
+  
+  <section id="detalle-depilacion">
+    <h2>Depilación</h2>
+    <p>Depilación con cera tibia de excelente calidad. Técnica suave y rápida para una piel suave por más tiempo. Ideal para quienes buscan resultados duraderos y confort🌿.</p>
+    <a href="#servicios" style="display:inline-block; margin-top: 1rem; color: #a65c5c; text-decoration: underline;">⬅ Volver a Servicios</a> 
+</section>
+
+<section id="detalle-manicuria/pedicuria">
+  <h2>Manicuría-Pedicuría</h2>
+  <p>Utilizamos productos de alta calidad, garantizando higiene, durabilidad y resultados impecables.
+    Ideal para mimarte, renovar tu imagen o prepararte para una ocasión especial 💅👣.</p>
+  <a href="#servicios" style="display:inline-block; margin-top: 1rem; color: #a65c5c; text-decoration: underline;">⬅ Volver a Servicios</a> 
+</section>
+  
+
+  <footer>
+    <p>&copy; 2025 Prana Zen - Todos los derechos reservados</p>
+    <div class="redes">
+     
+      <p>Seguinos en redes:</p>
+      <a href="https://instagram.com/pranazen_" target="_blank">
+        <img src="img/instagram-brands.svg" alt="Instagram" width="30">
+      </a>
+    </div>
+
+  </footer>
+
+  <a class="whatsapp-fijo" href="https://wa.me/5492975094235?text=Hola%20SpacioMujer%2C%20quiero%20pedir%20un%20turno%20para..." 
+   target="_blank" 
+   title="Escribinos por WhatsApp">
+  <img src="WhatsApp.svg.png" alt="WhatsApp" style="width: 30px; height: 30px;">
+</a>
+
+
+</body>
+</html>
